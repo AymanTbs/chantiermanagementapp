@@ -1,0 +1,79 @@
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <button mat-icon-button (click)="goBack()" class="back-button">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <h1>{{ chantierId }}</h1>
+    <div class="header-actions">
+      <button mat-icon-button>
+        <mat-icon>refresh</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="metrics-row">
+    <div class="metric-card">
+      <span class="metric-label">Employés présents</span>
+      <span class="metric-value">0</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-label">Total Appro</span>
+      <span class="metric-value">150</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-label">Total Matériel</span>
+      <span class="metric-value">75</span>
+    </div>
+  </div>
+
+  <div class="dashboard-grid">
+    <mat-card class="dashboard-card mouvements" (click)="navigateToSection('mouvements')">
+      <mat-card-content>
+        <mat-icon>trending_up</mat-icon>
+        <h3>Mouvements</h3>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="dashboard-card appro" (click)="navigateToSection('appro')">
+      <mat-card-content>
+        <mat-icon>shopping_cart</mat-icon>
+        <h3>Appro</h3>
+        <div class="coverage-indicator">
+          <span class="coverage-text">80%</span>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="dashboard-card ouvrier" (click)="navigateToSection('ouvrier')">
+      <mat-card-content>
+        <mat-icon>engineering</mat-icon>
+        <h3>Ouvrier</h3>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="dashboard-card materiel" (click)="navigateToSection('materiel')">
+      <mat-card-content>
+        <mat-icon>build</mat-icon>
+        <h3>Matériel</h3>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="dashboard-card rapport" (click)="navigateToSection('rapport')">
+      <mat-card-content>
+        <mat-icon>description</mat-icon>
+        <h3>Rapport Chantier</h3>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="dashboard-card sous-traitance" (click)="navigateToSection('sous-traitance')">
+      <mat-card-content>
+        <mat-icon>handshake</mat-icon>
+        <h3>Sous Traitance</h3>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+

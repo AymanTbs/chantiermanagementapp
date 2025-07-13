@@ -1,0 +1,167 @@
+.dashboard-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+  padding: 24px;
+  border-radius: 12px;
+  
+  .back-button {
+    margin-right: 16px;
+    color: white;
+  }
+  
+  h1 {
+    flex: 1;
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+  }
+  
+  .header-actions {
+    display: flex;
+    gap: 8px;
+    
+    button {
+      color: white;
+    }
+  }
+}
+
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.metric-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  .metric-label {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 8px;
+  }
+  
+  .metric-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1e293b;
+  }
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.dashboard-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 150px;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  mat-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 32px;
+    color: white;
+    text-align: center;
+    
+    mat-icon {
+      font-size: 48px;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 16px;
+    }
+    
+    h3 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+  
+  &.mouvements {
+    background: linear-gradient(135deg, #10b981, #059669);
+  }
+  
+  &.appro {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    
+    .coverage-indicator {
+      margin-top: 12px;
+      
+      .coverage-text {
+        font-size: 24px;
+        font-weight: 700;
+      }
+    }
+  }
+  
+  &.ouvrier {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+  }
+  
+  &.materiel {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+  }
+  
+  &.rapport {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  }
+  
+  &.sous-traitance {
+    background: linear-gradient(135deg, #06b6d4, #0891b2);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    text-align: center;
+    
+    .back-button {
+      align-self: flex-start;
+      margin-bottom: 16px;
+    }
+    
+    h1 {
+      margin-bottom: 16px;
+    }
+  }
+  
+  .metrics-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
